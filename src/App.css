@@ -1,0 +1,82 @@
+  h1{
+    color: aliceblue;
+  }
+
+  .logo {
+    animation: 
+      crecer 3s ease forwards, 
+      mover 0.5s ease 3s forwards;
+      position: relative;
+  }
+
+  @keyframes crecer {
+    0% {
+      transform: scale(0.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes mover {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: translate(-45vw, -42vh) scale(0.3);
+      z-index: 3;
+    }
+  }
+
+  .container-logo, .container-loader{
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-logo{
+    z-index: 3;
+  }
+
+  .container-loader{
+    z-index: 2;
+    opacity: 0.8;
+  }
+
+  .container-app{ 
+    z-index: 1;
+  }
+
+ .footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: 100vw;
+  height: 70px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background-color: black;
+  z-index: 6;
+
+  font-size: 12px;
+}
+
+  .footer a{
+    text-decoration: underline;
+    font-weight: 400;
+    margin-left: 25px;
+    cursor: pointer;
+    color: white;
+  }
+

@@ -1,0 +1,22 @@
+.loader{
+    margin: 0;
+    color: aliceblue;
+}
+
+span{
+    text-decoration: underline;
+}
+.culture{
+    color: brown;
+    transform: translate(0px, -50px);
+}
+
+.business{
+    color: yellow;
+    transform: translate(0px, -50px);
+}
+
+.people{
+    color: pink;
+    transform: translate(0px, -50px);
+}
