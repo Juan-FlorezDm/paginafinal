@@ -48,8 +48,10 @@ export default function Principal(){
             </div>
 
             <div 
-                className="tres">
-                    jefrey
+                className="tres"
+                style={{backgroundImage: `url(${img3})`}}
+                >
+
             </div>
     </div>
     )
