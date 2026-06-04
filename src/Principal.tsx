@@ -1,9 +1,9 @@
 import './principal.css'
 import img1 from '../public/img1.jpg'
 import img2 from '../public/img1.webp'
-
-
-
+import img3 from '../public/img3.webp'
+import img4 from '../public/img4.webp'
+import img5 from '../public/img5.webp'
 
 export default function Principal(){
 
@@ -52,8 +52,10 @@ export default function Principal(){
             </div>
 
             <div 
-                className="tres">
-                    jefrey
+                className="tres"
+                style={{backgroundImage: `url(${img3})`}}
+                >
+
             </div>
     </div>
     )
