@@ -53,7 +53,7 @@ export default function Principal(){
 
             <div 
                 className="tres">
-                
+                    tres
             </div>
     </div>
     )
