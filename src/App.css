@@ -44,7 +44,8 @@
   .container-logo{
     z-index: 13;
     background-color: black;
-    animation: ocultarFondo 0s linear 3.5s forwards;
+    animation: ocultarFondo 0s linear 3.5s forwards,
+    desactivarClicks 0s linear 3.5s forwards;
   }
 
 
@@ -60,12 +61,19 @@
   z-index: 12;
   transition: background-color 1.5s ease;
 
-  animation: borrafondo 0s linear 3.5s forwards;
+  animation: borrafondo 0s linear 3.5s forwards,
+  desactivarClicks 0s linear 3.5s forwards;
 }
 
 @keyframes borrafondo{
   to{
     background-color: transparent;
+  }
+}
+
+@keyframes desactivarClicks {
+  to {
+    pointer-events: none;
   }
 }
 
