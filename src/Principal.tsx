@@ -1,7 +1,7 @@
 import './principal.css'
 import img1 from '../public/img1.jpg'
 import img2 from '../public/img1.webp'
-import Carrusel from './carrusel'
+
 
 
 
