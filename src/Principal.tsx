@@ -57,5 +57,4 @@ export default function Principal(){
             </div>
     </div>
     )
-    
 }
