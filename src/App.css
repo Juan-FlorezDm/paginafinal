@@ -34,7 +34,7 @@
   .container-logo, .container-loader{
     position: fixed;
     inset: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     display: flex;
@@ -53,14 +53,12 @@
 
   .container-app{ 
     z-index: 1;
+    min-height: calc(100vh - 70px);
   }
 
  .footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: 70px;
 
   display: flex;
