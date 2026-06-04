@@ -54,14 +54,38 @@ export default function Principal(){
             </div>
 
             <div className="tres">
-                <Carrusel
-                    imagenes={[
-                    img3,
-                    img4,
-                    img5
-                    ]}
-                />
-            </div>
+  <div className="carrusel-wrapper">
+    <Carrusel
+      imagenes={[
+        img3,
+        img4,
+        img5
+      ]}
+    />
+
+    <div className="overlay-texto">
+      <div className="texto-contenido">
+
+        <h1 className="titulo-rrss">
+          Conoce nuestras RRSS
+        </h1>
+
+        <p>
+          Descubre todo lo que compartimos en Instagram y LinkedIn.
+          <br />
+          <span className="texto-destacado">
+            Contágiate de nuestro Power To Move!
+          </span>
+        </p>
+
+        <button className="btn-siguenos">
+          Síguenos
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
     )

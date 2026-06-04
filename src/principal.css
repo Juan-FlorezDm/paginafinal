@@ -1,4 +1,4 @@
-.principal {
+﻿.principal {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -21,8 +21,10 @@
     padding: 0;
 }
 
-.tres{
-    padding-top: 69px;
+.tres {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0;
 }
 
 a{
@@ -150,5 +152,201 @@ button{
     margin: 0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.principal {
+    height: 100vh;
+    width: 100vw;
+}
+
+.tres {
+    padding-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-input input {
+    color: white;
+}
+
+.content-input input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-form {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.dos {
+    align-items: flex-end;
+}
+
+.Datos button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.Datos button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.carrusel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-texto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    padding: 35px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.90) 0%,
+        rgba(0,0,0,.55) 50%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+.texto-contenido {
+    color: white;
+}
+
+.titulo-rrss {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: .95;
+    margin-bottom: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.texto-contenido p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.texto-destacado {
+    font-weight: 700;
+}
+
+.btn-siguenos {
+    width: 130px;
+    height: 50px;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0;
+    transition: .3s ease;
+}
+
+.btn-siguenos:hover {
+    background: #d9d9d9;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px;
+    background-color: black;
+    z-index: 6;
+    font-size: 12px;
+    margin: 0;
+}
+
+.footer a {
+    text-decoration: underline;
+    font-weight: 400;
+    margin-left: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.logo {
+    animation: crecer 3s ease forwards, mover 0.5s ease 3s forwards;
+    position: relative;
+}
+
+@keyframes crecer {
+    0% {
+        transform: scale(0.3);
+        background-color: rgb(13, 121, 228);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: scale(1);
+        background-color: rgb(128, 3, 3);
+    }
+    100% {
+        transform: translate(-45vw, -42vh) scale(0.3);
+        z-index: 3;
+    }
+}
+
+.container-logo,
+.container-loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-logo {
+    z-index: 3;
+}
+
+.container-loader {
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.container-app {
+    z-index: 1;
+    min-height: calc(100vh - 70px);
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    overflow-x: hidden;
+}
 
