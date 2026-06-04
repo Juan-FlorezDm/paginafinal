@@ -20,8 +20,6 @@ function App() {
       <div className='container-app'>
           <Principal />
       </div>
-
-
       <div className='container-footer'>
         <div className='footer'>
           <a 

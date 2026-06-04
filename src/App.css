@@ -13,17 +13,16 @@
   @keyframes crecer {
     0% {
       transform: scale(0.3);
-      background-color: rgb(13, 121, 228);
     }
     100% {
       transform: scale(1);
     }
+
   }
 
   @keyframes mover {
     0% {
       transform: scale(1);
-      background-color: rgb(128, 3, 3);
     }
     100% {
       transform: translate(-45vw, -42vh) scale(0.3);
@@ -43,41 +42,65 @@
   }
 
   .container-logo{
-    z-index: 3;
+    z-index: 13;
+    background-color: black;
+    animation: ocultarFondo 0s linear 3.5s forwards;
   }
 
-  .container-loader{
-    z-index: 2;
-    opacity: 0.8;
+
+
+@keyframes ocultarFondo {
+  to {
+    background-color: transparent;
   }
+}
+
+
+.container-loader{
+  z-index: 12;
+  transition: background-color 1.5s ease;
+
+  animation: borrafondo 0s linear 3.5s forwards;
+}
+
+@keyframes borrafondo{
+  to{
+    background-color: transparent;
+  }
+}
+
 
   .container-app{ 
     z-index: 1;
     min-height: calc(100vh - 70px);
   }
 
- .footer {
-  position: relative;
-  width: 100%;
-  height: 70px;
-
+ .footer{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  padding: 0 40px;
+  height: 100%;
 
   background-color: black;
-  z-index: 6;
-
   font-size: 12px;
 }
 
   .footer a{
     text-decoration: underline;
-    font-weight: 400;
-    margin-left: 25px;
     cursor: pointer;
     color: white;
+    margin-left: 25px;
+    padding: 0px 10px;
   }
 
+  .footer a:last-child{
+    padding-right: 40px;
+  }
+
+.container-footer{
+  position: fixed;
+  bottom: 0;
+  z-index: 6;
+  height: 70px;
+  width: 100%;
+}
