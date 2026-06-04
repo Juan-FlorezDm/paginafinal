@@ -7,11 +7,13 @@
       crecer 3s ease forwards, 
       mover 0.5s ease 3s forwards;
       position: relative;
+
   }
 
   @keyframes crecer {
     0% {
       transform: scale(0.3);
+      background-color: rgb(13, 121, 228);
     }
     100% {
       transform: scale(1);
@@ -21,6 +23,7 @@
   @keyframes mover {
     0% {
       transform: scale(1);
+      background-color: rgb(128, 3, 3);
     }
     100% {
       transform: translate(-45vw, -42vh) scale(0.3);
