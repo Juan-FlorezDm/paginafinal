@@ -152,12 +152,6 @@ button{
     margin: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .principal {
     height: 100vh;
     width: 100vw;
@@ -165,7 +159,6 @@ button{
 
 .tres {
     padding-top: 0;
-    position: relative;
     overflow: hidden;
 }
 
@@ -182,7 +175,6 @@ input::placeholder {
 }
 
 .footer-form {
-    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -196,8 +188,10 @@ button {
 }
 
 .Datos button {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    margin-top: 20px;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .Datos button:hover {
@@ -205,7 +199,6 @@ button {
 }
 
 .carrusel-wrapper {
-    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -214,8 +207,8 @@ button {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 30;
+    bottom: 70px;
+    z-index: 2;
     padding: 35px;
     background: linear-gradient(
         to top,
@@ -267,86 +260,13 @@ button {
     background: #d9d9d9;
 }
 
-.footer {
-    position: relative;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 40px;
-    background-color: black;
-    z-index: 6;
-    font-size: 12px;
-    margin: 0;
-}
 
 .footer a {
     text-decoration: underline;
     font-weight: 400;
-    margin-left: 25px;
+    margin-left: 10px;
     cursor: pointer;
     color: white;
 }
 
-.logo {
-    animation: crecer 3s ease forwards, mover 0.5s ease 3s forwards;
-    position: relative;
-}
-
-@keyframes crecer {
-    0% {
-        transform: scale(0.3);
-        background-color: rgb(13, 121, 228);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes mover {
-    0% {
-        transform: scale(1);
-        background-color: rgb(128, 3, 3);
-    }
-    100% {
-        transform: translate(-45vw, -42vh) scale(0.3);
-        z-index: 3;
-    }
-}
-
-.container-logo,
-.container-loader {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-logo {
-    z-index: 3;
-}
-
-.container-loader {
-    z-index: 2;
-    opacity: 0.8;
-}
-
-.container-app {
-    z-index: 1;
-    min-height: calc(100vh - 70px);
-}
-
-body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-#root {
-    overflow-x: hidden;
-}
 

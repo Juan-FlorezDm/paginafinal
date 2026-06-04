@@ -1,22 +1,61 @@
 .loader{
     margin: 0;
     color: aliceblue;
+    z-index: 9;
+    height: 100vh;
+    width: 100vw;
+
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 span{
     text-decoration: underline;
+    font-style: italic;
 }
 .culture{
-    color: brown;
-    transform: translate(0px, -50px);
+    color: #FB4133;
+    transform: translate(0px, 0px);
+    width: 400px;    
 }
 
 .business{
-    color: yellow;
-    transform: translate(0px, -50px);
+    color: #FEFB57;
+    transform: translate(0px, 0px);
+    width: 400px;
 }
 
 .people{
-    color: pink;
-    transform: translate(0px, -50px);
+    color: #EE92DB;
+    transform: translate(0px, 0px);
 }
+
+
+.loader h2 {
+  overflow: hidden;
+}
+
+
+.word {
+  display: inline-block;
+  animation: wordReveal 0.6s ease-in-out forwards;
+  z-index: 14;
+}
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

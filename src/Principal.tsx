@@ -78,7 +78,7 @@ export default function Principal(){
           </span>
         </p>
 
-        <button className="btn-siguenos">
+        <button >
           Síguenos
         </button>
 
@@ -86,7 +86,6 @@ export default function Principal(){
     </div>
   </div>
 </div>
-
     </div>
     )
 }

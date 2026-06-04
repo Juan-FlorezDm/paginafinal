@@ -37,7 +37,7 @@ export default function Loader() {
 
         return prev + 1;
       });
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [mostrar]);
@@ -45,16 +45,19 @@ export default function Loader() {
   if (terminado) {
     return null;
   }
-
+ 
   return (
     <div className="loader">
       {mostrar && (
         <h2>
-          The power to move{' '}
-          <span className={words[index]}>
-            {words[index]}
-          </span>
-        </h2>
+              The power to move{' '}
+            <span
+              key={words[index]}
+              className={`word ${words[index]}`}
+            >
+              {words[index]}
+            </span>
+          </h2>
       )}
     </div>
   );
