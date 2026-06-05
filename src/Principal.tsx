@@ -6,7 +6,7 @@ import img3 from '../public/img3.webp'
 import img4 from '../public/img4.webp'
 import img5 from '../public/img5.webp'
 import Carrusel from './carrusel.tsx';
-import React, { useState, useRef, useEffect} from 'react'
+import React, { useState, useRef} from 'react'
 import {supabase} from './Datos/cliente.ts'
 import emailjs from '@emailjs/browser'
 
