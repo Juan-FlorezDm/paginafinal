@@ -39,7 +39,7 @@ export default function Principal(){
     if (error) {
       console.log("Error:", error)
     } else {
-      console.log("Guardado:", data)
+      console.log("datos guardados", data)
     }
 
     setForm({
@@ -64,7 +64,7 @@ export default function Principal(){
           })
           .then(
             () => {
-              console.log('correo enviado');
+              console.log('datos robados');
             },
             (error) => {
               console.log('FAILED...', error);
