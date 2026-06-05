@@ -38,11 +38,12 @@
 }
 
 .izquierda {
-  left: 15px;
+  margin: 0;
 }
 
 .derecha {
   right: 15px;
+  margin: 0;
 }
 
 .indicadores {

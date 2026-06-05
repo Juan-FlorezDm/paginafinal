@@ -1,24 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./carrusel.css";
 
 interface CarruselProps {
   imagenes: string[];
 }
 
-export default function Carrusel({
-  imagenes,
-}: CarruselProps) {
+export default function Carrusel({ imagenes }: CarruselProps) {
   const [indice, setIndice] = useState(0);
-
-  useEffect(() => {
-    const intervalo = setInterval(() => {
-      setIndice((prev) =>
-        prev === imagenes.length - 1 ? 0 : prev + 1
-      );
-    }, 4000);
-
-    return () => clearInterval(intervalo);
-  }, [imagenes.length]);
 
   const siguiente = () => {
     setIndice((prev) =>
