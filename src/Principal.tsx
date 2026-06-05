@@ -36,6 +36,13 @@ export default function Principal(){
     } else {
       console.log("Guardado:", data)
     }
+
+    setForm({
+      Nombre: "",
+      correo: "",
+      asunto: ""
+    })
+
   }
     return (
     <div className="principal">
@@ -52,6 +59,7 @@ export default function Principal(){
                             <input 
                                 type="text" 
                                 placeholder='Nombres' 
+                                value={form.Nombre}
                                 onChange={(e) => setForm({ ...form, Nombre: e.target.value })}
                                 />
                         </span>
@@ -60,6 +68,7 @@ export default function Principal(){
                             <input 
                                 type="text" 
                                 placeholder='Correo' 
+                                value={form.correo}
                                 onChange={(e) => setForm({ ...form, correo: e.target.value })}/>
                         </span>
 
@@ -67,6 +76,7 @@ export default function Principal(){
                             <input 
                                 type="text" 
                                 placeholder='Asunto' 
+                                value={form.asunto}
                                 onChange={(e) => setForm({ ...form, asunto: e.target.value })}/>
                         </span>    
 
