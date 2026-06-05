@@ -6,7 +6,7 @@ import img3 from '../public/img3.webp'
 import img4 from '../public/img4.webp'
 import img5 from '../public/img5.webp'
 import Carrusel from './carrusel.tsx';
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import {supabase} from './Datos/cliente.ts'
 import emailjs from '@emailjs/browser'
 
@@ -15,6 +15,7 @@ type Contacto = {
   Nombre: string
   correo: string
   asunto: string
+  numero: string
 }
 
 const TEMPLAT_ID = import.meta.env.VITE_TEMPLAT_ID as string
@@ -26,7 +27,8 @@ export default function Principal(){
     const [form, setForm] = useState<Contacto>({
         Nombre: "",
         correo: "",
-        asunto: ""
+        asunto: "",
+        numero: ""
     })
 
     const enviar = async (e: React.FormEvent) => {
@@ -45,7 +47,8 @@ export default function Principal(){
     setForm({
       Nombre: "",
       correo: "",
-      asunto: ""
+      asunto: "",
+      numero: ""
     })
   }
 
@@ -71,7 +74,6 @@ export default function Principal(){
             },
           );
     }
-    
     };
 
     return (
@@ -104,14 +106,23 @@ export default function Principal(){
                                 onChange={(e) => setForm({ ...form, correo: e.target.value })}/>
                         </span>
 
+                        
+
                         <span className='content-input'>
                             <input 
                                 type="text" 
-                                placeholder='Asunto' 
+                                placeholder='Empresa' 
                                 value={form.asunto}
                                 onChange={(e) => setForm({ ...form, asunto: e.target.value })}/>
                         </span>    
 
+                        <span className='content-input'>
+                            <input 
+                                type="text" 
+                                placeholder='Numero' 
+                                value={form.numero}
+                                onChange={(e) => setForm({ ...form, numero: e.target.value })}/>
+                        </span>  
                         <div className='footer-form'>
                             <input type="checkbox" id='check' /><label htmlFor="check"></label> 
                             <h3>He leído y acepto los términos y condiciones y la política de privacidad</h3>
