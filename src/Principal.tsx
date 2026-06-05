@@ -6,8 +6,9 @@ import img3 from '../public/img3.webp'
 import img4 from '../public/img4.webp'
 import img5 from '../public/img5.webp'
 import Carrusel from './carrusel.tsx';
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {supabase} from './Datos/cliente.ts'
+import emailjs from '@emailjs/browser'
 
 
 type Contacto = {
@@ -16,8 +17,12 @@ type Contacto = {
   asunto: string
 }
 
-export default function Principal(){
+const TEMPLAT_ID = import.meta.env.VITE_TEMPLAT_ID as string
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID as string
+const YOUR_PUBLIC_KEY = import.meta.env.VITE_YOUR_PUBLIC_KEY as string
 
+export default function Principal(){
+  
     const [form, setForm] = useState<Contacto>({
         Nombre: "",
         correo: "",
@@ -32,7 +37,7 @@ export default function Principal(){
       .insert([form])
 
     if (error) {
-      console.log("Error:", error.message)
+      console.log("Error:", error)
     } else {
       console.log("Guardado:", data)
     }
@@ -42,15 +47,40 @@ export default function Principal(){
       correo: "",
       asunto: ""
     })
-
   }
+
+
+  
+    const form_email = useRef<HTMLFormElement>(null);
+
+    const sendEmail = (e: React.FormEvent) => {
+      e.preventDefault();
+
+
+    if(form_email.current){
+      emailjs
+          .sendForm(SERVICE_ID, TEMPLAT_ID, form_email.current , {
+            publicKey: YOUR_PUBLIC_KEY,
+          })
+          .then(
+            () => {
+              console.log('correo enviado');
+            },
+            (error) => {
+              console.log('FAILED...', error);
+            },
+          );
+    }
+    
+    };
+
     return (
     <div className="principal">
             <div 
                 className="uno"
                 style={{backgroundImage: `url(${img1})`}}
                 >
-                <form method="post" onSubmit={enviar}>
+                <form method="post" onSubmit={(e)=>{enviar(e); sendEmail(e)}} ref={form_email}>
                     <h1>Tu empresa</h1>
                     <h1>con nosotros</h1>
                     <p>¿Quieres hacer negocios con la agencia más creativa y efectiva del país? <b>Contáctanos ahora</b> <a href="marcelo.giraldo@ddbcol.com.co">marcelo.giraldo@ddbcol.com.co</a></p>
@@ -59,6 +89,7 @@ export default function Principal(){
                             <input 
                                 type="text" 
                                 placeholder='Nombres' 
+                                name='user_name'
                                 value={form.Nombre}
                                 onChange={(e) => setForm({ ...form, Nombre: e.target.value })}
                                 />
@@ -67,7 +98,8 @@ export default function Principal(){
                         <span className='content-input'>
                             <input 
                                 type="text" 
-                                placeholder='Correo' 
+                                placeholder='Correo'
+                                name='user_email' 
                                 value={form.correo}
                                 onChange={(e) => setForm({ ...form, correo: e.target.value })}/>
                         </span>
