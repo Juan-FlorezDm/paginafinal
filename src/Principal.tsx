@@ -6,37 +6,74 @@ import img3 from '../public/img3.webp'
 import img4 from '../public/img4.webp'
 import img5 from '../public/img5.webp'
 import Carrusel from './carrusel.tsx';
+import React, { useState } from 'react'
+import {supabase} from './Datos/cliente.ts'
 
+
+type Contacto = {
+  Nombre: string
+  correo: string
+  asunto: string
+}
 
 export default function Principal(){
 
+    const [form, setForm] = useState<Contacto>({
+        Nombre: "",
+        correo: "",
+        asunto: ""
+    })
+
+    const enviar = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const { data, error } = await supabase
+      .from("Datos")
+      .insert([form])
+
+    if (error) {
+      console.log("Error:", error.message)
+    } else {
+      console.log("Guardado:", data)
+    }
+  }
     return (
     <div className="principal">
             <div 
                 className="uno"
                 style={{backgroundImage: `url(${img1})`}}
                 >
-                <form method="post">
+                <form method="post" onSubmit={enviar}>
                     <h1>Tu empresa</h1>
                     <h1>con nosotros</h1>
                     <p>¿Quieres hacer negocios con la agencia más creativa y efectiva del país? <b>Contáctanos ahora</b> <a href="marcelo.giraldo@ddbcol.com.co">marcelo.giraldo@ddbcol.com.co</a></p>
                     <div className='inputs'>
                         <span className='content-input'>
-                            <input type="text" placeholder='Nombres'/>
+                            <input 
+                                type="text" 
+                                placeholder='Nombres' 
+                                onChange={(e) => setForm({ ...form, Nombre: e.target.value })}
+                                />
                         </span>
                         
                         <span className='content-input'>
-                            <input type="text" placeholder='Correo'/>
+                            <input 
+                                type="text" 
+                                placeholder='Correo' 
+                                onChange={(e) => setForm({ ...form, correo: e.target.value })}/>
                         </span>
 
                         <span className='content-input'>
-                            <input type="text" placeholder='Asunto'/>
+                            <input 
+                                type="text" 
+                                placeholder='Asunto' 
+                                onChange={(e) => setForm({ ...form, asunto: e.target.value })}/>
                         </span>    
 
                         <div className='footer-form'>
                             <input type="checkbox" id='check' /><label htmlFor="check"></label> 
                             <h3>He leído y acepto los términos y condiciones y la política de privacidad</h3>
-                            <button>Enviar</button>
+                            <button type='submit'>Enviar</button>
                         </div>                
                     </div>
                 </form>
