@@ -161,7 +161,7 @@ export default function Principal(){
         </h1>
 
         <p>
-          Descubre todo lo que compartimos en Instagram y LinkedIn.
+          Descubre todo lo que compartimos en redes
           <br />
           <span className="texto-destacado">
             Contágiate de nuestro Power To Move!
