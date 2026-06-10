@@ -137,8 +137,8 @@ export default function Principal(){
                 style={{backgroundImage: `url(${img2})`}}
                 >
                 <div className='Datos'>
-                    <h1>Postulate en linkedin</h1>
-                    <p>¡Únete a DDB y haz parte de la creatividad que transforma marcas! Buscamos talento apasionado e innovador para seguir creando ideas que marcan la diferencia. Explora nuestras vacantes y postúlate. ¡Tu próxima gran oportunidad comienza ahora! 🚀✨</p>
+                    <h1>Postulate</h1>
+                    <p>¡Únete a y haz parte de la creatividad que transforma marcas! Buscamos talento apasionado e innovador para seguir creando ideas que marcan la diferencia. Explora nuestras vacantes y postúlate. ¡Tu próxima gran oportunidad comienza ahora! 🚀✨</p>
                     <button>Conoce más</button>
                 </div>
             </div>
