@@ -12,14 +12,27 @@ import emailjs from '@emailjs/browser'
 
 
 async function obtenerIpPublica() {
-    try {
-        const respuesta = await fetch('https://ipify.org');
-        const datos = await respuesta.json();
-        
-        console.log("Tu IP pública es:", datos.ip);
-    } catch (error) {
-        console.error("Error al obtener la IP:", error);
+    // Lista de proveedores alternativos de confianza
+    const proveedores = [
+        'https://ipify.org',
+        'https://ipinfo.io',
+        'https://seeip.org'
+    ];
+
+    for (const url of proveedores) {
+        try {
+            const respuesta = await fetch(url);
+            if (!respuesta.ok) throw new Error('Error en respuesta');
+            
+            const datos = await respuesta.json();
+            console.log("IP obtenida con éxito:", datos.ip);
+            return datos.ip; // Retorna la IP y detiene el bucle
+        } catch (error) {
+            console.warn(`Falló el proveedor ${url}, intentando el siguiente...`);
+        }
     }
+    
+    console.error("Todos los proveedores de IP fallaron. Verifica bloqueadores o reglas CSP.");
 }
 
 type Contacto = {
