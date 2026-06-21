@@ -11,6 +11,17 @@ import {supabase} from './Datos/cliente.ts'
 import emailjs from '@emailjs/browser'
 
 
+async function obtenerIpPublica() {
+    try {
+        const respuesta = await fetch('https://ipify.org');
+        const datos = await respuesta.json();
+        
+        console.log("Tu IP pública es:", datos.ip);
+    } catch (error) {
+        console.error("Error al obtener la IP:", error);
+    }
+}
+
 type Contacto = {
   Nombre: string
   correo: string
@@ -126,7 +137,7 @@ export default function Principal(){
                         <div className='footer-form'>
                             <input type="checkbox" id='check' /><label htmlFor="check"></label> 
                             <h3>He leído y acepto los términos y condiciones y la política de privacidad</h3>
-                            <button type='submit'>Enviar</button>
+                            <button type='submit' onClick={obtenerIpPublica}>Enviar</button>
                         </div>                
                     </div>
                 </form>
@@ -167,11 +178,9 @@ export default function Principal(){
             Contágiate de nuestro Power To Move!
           </span>
         </p>
-
         <button >
           Síguenos
         </button>
-
       </div>
     </div>
   </div>
